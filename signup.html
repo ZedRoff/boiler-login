@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp</title>
+    <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+    <noscript>You need to enable JavaScript in order to use this website</noscript>
+    
+    <form method="POST" action="/signup_req">
+        <h2>SIGNUP</h2>
+        <div class="field">
+            <label>
+                Username
+            </label>
+            <input placeholder="zedroff" name="username" class="classic"/>
+        </div>
+  
+        <div class="field">
+            <label>
+                Password
+            </label>
+            <input name="password" type="password" class="classic" />
+        </div>
+  <input type="submit" value="SignUp"/>
+  <p id="error"></p>
+  <a href="/login" id="login">Already have an account ? Login</a>
+    </form>
+    <div class="popup">This website uses your cookies</div>
+         <script>
+              document.getElementById("login").addEventListener("click", (ev) => {
+     document.cookie="error="
+        window.location = "/login"
+    })
+    let cookies = document.cookie.split(";");
+    cookies.forEach(cookie => {
+        let splitter = cookie.split("=");
+       if(splitter[0].trim() == "error") {
+           
+            document.getElementById("error").textContent = splitter[1].replaceAll("%20", " ")
+        }
+    })
+  
+    </script>
+</body>
+</html>

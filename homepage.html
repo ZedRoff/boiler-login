@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+</head>
+<body>
+    <noscript>You need to enable JavaScript in order to use this website</noscript>
+    <div>
+ <h2>Welcome <p id="username"></p> !</h2>
+</div>
+<button id="logout">LogOut</button>
+<div class="popup">This website uses your cookies</div>
+ <script>
+   axios.get("http://localhost:3000/username").then(res => {
+    
+   document.getElementById("username").textContent = res.data.message;
+   })
+   document.getElementById("logout").addEventListener("click", (ev) => {
+
+    axios.post("http://localhost:3000/logout").then(res => {
+        let data = res.data.message;
+        console.log(data)
+        if(data == "Success") {
+            window.location = "/";
+        }
+    })
+   })
+    </script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Verdana, sans-serif;
+    background: rgb(255, 104, 104);
+    display:flex;
+    flex-direction:column;
+    gap: 100px;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items:center;
+    height: 100vh;
+}
+form {
+    display:flex;
+    background: #2E2E2E;
+    padding: 25px;
+    border-radius: 15px;
+    transition: .5s box-shadow;
+   
+    flex-direction:column;
+    gap: 15px;
+    
+}
+label {
+    font-size: 20px;
+    color:white;
+    font-weight: bold;
+}
+form:hover {
+    box-shadow: 6px 6px 6px black;
+}
+.field {
+    display:flex;
+   gap: 15px;
+}
+.classic {
+    padding: 5px;
+    outline:none;
+    border:none;
+    border-bottom: 2px solid white;
+    background:none;
+    color:white;
+}
+input[type='submit'] {  
+    align-self: flex-end;
+    background:rgb(235, 66, 66);
+    color:white;
+    border:none;
+    padding: 15px;
+    border-radius: 15px;
+    outline:none;
+    transition: .5s transform;
+}
+input[type='submit']:hover {
+    cursor:pointer;
+    transform: scale(1.1);
+}
+#signup, #login {
+    color:inherit;
+    color:white;
+    text-decoration:underline;
+    cursor:pointer;
+    
+}
+h2 {
+    color:white;
+    border-left: 2px solid white;
+    padding-left: 15px;
+    margin-bottom: 25px;
+}
+#logout {
+    padding: 25px;
+    outline:none;
+    padding:none;
+    border:none;
+}
+#logout:hover {
+    cursor:pointer;
+}
+#error {
+    color:red;
+}
+.popup {
+    position: absolute;
+    bottom: 25px;
+    background:white;
+    padding: 25px;
+    
+}
